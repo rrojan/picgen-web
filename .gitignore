@@ -1,0 +1,4 @@
+venv/
+# For now just commit the db in the repo
+# db.sqlite3
+.vscode/
