@@ -73,7 +73,9 @@
                                 var image = $("<img>", {src: photo.image, class: "card-img-top photo-image"});
                                 var cardBody = $("<div>", {class: "card-body d-flex flex-column justify-content-between"});
                                 var title = $("<h5>", {class: "card-title", text: photo.title});
+                                var created_at = $("<small>", {text: photo.created_at});
                                 cardBody.append(title);
+                                cardBody.append(created_at);
                                 cardBody.append(image);
                                 card.append(cardBody);
                                 photoItem.append(card);

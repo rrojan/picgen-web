@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 class Photo(models.Model):
@@ -7,6 +8,7 @@ class Photo(models.Model):
     image = models.ImageField(upload_to='generated/')
     created_by = models.ForeignKey(
         User, on_delete=models.CASCADE, default=1)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -18,6 +20,7 @@ class GeneratedPhoto(models.Model):
     image = models.ImageField(upload_to='generated/user_generated/')
     created_by = models.ForeignKey(
         User, on_delete=models.CASCADE, default=1)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
