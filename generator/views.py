@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import Photo
+from .models import Photo, GeneratedPhoto
 
 
 def home(request):
-    photos = Photo.objects.all()
+    photos = GeneratedPhoto.objects.all()
     return render(request, 'home.html', {'photos': photos})
 
 
